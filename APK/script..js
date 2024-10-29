@@ -1,5 +1,5 @@
 console.log("Script chargé");
-  function toggleForm() {
+  function toggleForm(event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
 
     const loginForm = document.getElementById('login-form');
