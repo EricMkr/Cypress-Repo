@@ -23,25 +23,3 @@ console.log("Signup Form Hidden:", signupForm.classList.contains('hidden'));
   }
 
   // Fonction de rechargement avec délai
-  function reloadWithDelay(delay = 5000000) {
-    // Affiche l'overlay
-    const overlay = document.getElementById('loadingOverlay');
-    overlay.style.display = 'flex';
-
-    // Délai avant rechargement de la page
-    setTimeout(  => {
-      location.reload();
-    }, delay); // Temps en millisecondes
-  }
-
-  // script.js from CODEGPT
-document.getElementById('btn-se-connecter').addEventListener('click', function() {
-  var loadingOverlay = document.getElementById('loadingOverlay');
-  loadingOverlay.style.display = 'block';
-
-  // Simulate a network request
-  setTimeout(function() {
-      loadingOverlay.style.display = 'none';
-      alert('Login successful!');
-  }, 15000); // Simulate a 3-second delay for the login process
-});
