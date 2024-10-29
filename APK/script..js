@@ -33,7 +33,7 @@ function reloadWithDelay(event) {
   // Délai avant la soumission du formulaire (ajuste le délai selon les besoins)
   setTimeout(() => {
     document.getElementById('login-form').submit();
-  }, 5000); // Temps en millisecondes (2000 ms = 2 sec)
+  }, 15000); // Temps en millisecondes (2000 ms = 2 sec)
 }
 
 // Fonction pour naviguer vers la page d'inscription avec un délai
