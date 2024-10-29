@@ -1,6 +1,6 @@
 console.log("Script chargé");
-console.log("Login Form Hidden:", loginForm.classList.contains('hidden'));
-console.log("Signup Form Hidden:", signupForm.classList.contains('hidden'));
+// console.log("Login Form Hidden:", loginForm.classList.contains('hidden'));
+// console.log("Signup Form Hidden:", signupForm.classList.contains('hidden'));
 
   function toggleForm(event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
@@ -47,5 +47,6 @@ function navigateToSignup(event) {
   // Redirige vers la page d'inscription après un délai
   setTimeout(() => {
     window.location.href = "index_signin.html";
-  }, 5000); // 1 seconde de délai
+  }, 150000); // 1 seconde de délai
 }
+
