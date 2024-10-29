@@ -9,7 +9,8 @@ describe('Login de mon application web.', () => {
 import { login } from './auth';
 
 describe("Tests de la fonction de connexion", () => {
-  test("Connexion réussie avec les identifiants corrects", () => {
+  it("Connexion réussie avec les identifiants corrects", () => {
+    
     const result = login("user", "password123");
     expect(result.success).toBe(true);
     expect(result.message).toBe("Connexion réussie");
