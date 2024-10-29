@@ -15,10 +15,13 @@
       <form id="login-form" class="form" action="#" method="post">
         <input type="text" name="username" placeholder="Nom d'utilisateur" required>
         <input type="password" name="password" placeholder="Mot de passe" required>
-        <button type="submit">Se connecter</button>
+        <button type="submit" id="btn-se-connecter" onclick="reloadWithDelay()">Se connecter</button>
         <p>Pas encore de compte ? <a href="index_signin.html" onclick="toggleForm(event)">S'inscrire</a></p>
-        
+      
       </form>
+      <div class="overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+      </div>
     </div>
   </div>
 
