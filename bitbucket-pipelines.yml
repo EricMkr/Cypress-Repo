@@ -27,7 +27,7 @@
             - cypress
             - node
           script:
-            - npm ci --prefer-offline
+            - echo hello
       # Runs jobs in parallel
       # https://docs.cypress.io/guides/guides/parallelization
       - parallel:

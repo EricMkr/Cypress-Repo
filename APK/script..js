@@ -1,4 +1,7 @@
 console.log("Script chargé");
+console.log("Login Form Hidden:", loginForm.classList.contains('hidden'));
+console.log("Signup Form Hidden:", signupForm.classList.contains('hidden'));
+
   function toggleForm(event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
 
@@ -18,5 +21,3 @@ console.log("Script chargé");
       formTitle.textContent = 'Inscription';
     }
   }
-console.log("Login Form Hidden:", loginForm.classList.contains('hidden'));
-console.log("Signup Form Hidden:", signupForm.classList.contains('hidden'));
