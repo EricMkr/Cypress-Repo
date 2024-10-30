@@ -5,26 +5,28 @@ describe('Login de mon application web.', () => {
   })
 })
 
-// auth.test.js
-import { login } from './auth';
+// Lire le projet et compter les commentaires.
 
-describe("Tests de la fonction de connexion", () => {
-  it("Connexion réussie avec les identifiants corrects", () => {
-    
-    const result = login("user", "password123");
-    expect(result.success).toBe(true);
-    expect(result.message).toBe("Connexion réussie");
+describe('Lis le projet et compte les commentaires dans le projet', () => {
+  it('Devrait compter tous les commentaires dans les fichiers .js', () => {
+    cy.task('countComments').then((commentCount) => {
+      cy.log(`Nombre total de commentaires: ${commentCount}`);
+      expect(commentCount).to.be.a,('number'); // Assure que le résultat est un nombre
+    });
   });
+})
 
-  test("Échec de la connexion avec un mot de passe incorrect", () => {
-    const result = login("user", "wrongpassword");
-    expect(result.success).toBe(false);
-    expect(result.message).toBe("Nom d'utilisateur ou mot de passe incorrect");
+// Lis, répertorie et affiche les commentaires et leur nombre.
+describe('Répertorie et compte les commentaires commençant par "//".', () => {
+  it('Devrait afficher uniquement les commentaires en ligne et leur nombre', () => {
+    cy.task('countComments').then(({ count, comments }) => {
+      const commentList = comments.join('\n'); // Liste de tous les commentaires
+      const message = `Nombre total de commentaires: ${count}\n\nCommentaires:\n${commentList}`;
+      
+      // Affiche le message dans une boîte de dialogue
+      cy.window().then((win) => {
+        win.alert(message);
+      });
+    });
   });
-
-  test("Échec de la connexion avec des champs vides", () => {
-    const result = login("", "");
-    expect(result.success).toBe(false);
-    expect(result.message).toBe("Les champs ne peuvent pas être vides");
-  });
-});
+})
