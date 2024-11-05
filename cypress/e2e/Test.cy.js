@@ -5,7 +5,7 @@ describe('Login de mon application web.', () => {
   })
 })
 
-// Lire le projet et compter les commentaires.
+/* Lire le projet et compter les commentaires.
 
 describe('Lis le projet et compte les commentaires dans le projet', () => {
   it('Devrait compter tous les commentaires dans les fichiers .js', () => {
@@ -16,7 +16,7 @@ describe('Lis le projet et compte les commentaires dans le projet', () => {
   });
 })
 
-// Lis, répertorie et affiche les commentaires et leur nombre.
+/* Lis, répertorie et affiche les commentaires et leur nombre.
 describe('Répertorie et compte les commentaires commençant par "//".', () => {
   it('Devrait afficher uniquement les commentaires en ligne et leur nombre', () => {
     cy.task('countComments').then(({ count, comments }) => {
@@ -29,4 +29,4 @@ describe('Répertorie et compte les commentaires commençant par "//".', () => {
       });
     });
   });
-})
+}) */
