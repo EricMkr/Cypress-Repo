@@ -36,7 +36,7 @@ export function login(username, password) {
 }
 
 
-  // Fonction pour afficher l'animation de chargement avant la soumission du formulaire
+/*  // Fonction pour afficher l'animation de chargement avant la soumission du formulaire
 function reloadWithDelay(event) {
   event.preventDefault(); // Empêche la soumission immédiate du formulaire
 
@@ -63,4 +63,5 @@ function navigateToSignup(event) {
     window.location.href = "index_signin.html";
   }, 150000); // 1 seconde de délai
 }
+  */
 
