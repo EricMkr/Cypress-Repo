@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fil d'Actualité - Application Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>MonApplication</h1>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Notifications</a></li>
+            </ul>
+            <button class="btn-logout">Déconnexion</button>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <div class="profile">
+                <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+                <h2>Nom d'utilisateur</h2>
+                <p>@pseudo</p>
+            </div>
+            <ul class="trending">
+                <h3>Tendances</h3>
+                <li>#Actualité</li>
+                <li>#Technologie</li>
+                <li>#Musique</li>
+                <li>#Art</li>
+            </ul>
+        </aside>
+
+        <section class="feed">
+            <div class="new-post">
+                <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+                <textarea placeholder="Quoi de neuf ?"></textarea>
+                <button class="btn-post">Poster</button>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <img src="user.jpg" alt="User Photo" class="profile-photo">
+                    <div>
+                        <h3>Nom d'utilisateur</h3>
+                        <p>@pseudo • 5m</p>
+                    </div>
+                </div>
+                <p class="post-content">Ceci est un exemple de post sur le fil d'actualité !</p>
+                <div class="post-actions">
+                    <button>Aimer</button>
+                    <button>Partager</button>
+                    <button>Commenter</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
