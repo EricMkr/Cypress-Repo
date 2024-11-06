@@ -1,0 +1,91 @@
+
+# Comment connecter Cypress avec un projet tiers ?
+Pour connecter Cypress avec un projet tiers, il faut généralement configurer Cypress pour qu'il puisse interagir avec l'application que tu souhaites tester. Voici un guide général pour l'intégrer efficacement :
+1. Installation de Cypress
+
+Assure-toi d’avoir Cypress installé dans ton projet. Tu peux l’installer avec npm ou yarn :
+
+bash
+npm install cypress --save-dev
+
+ou
+
+bash
+yarn add cypress --dev
+
+2. Configuration de Cypress
+
+Crée un dossier de configuration spécifique à Cypress si cela n'est pas déjà fait. Après la première exécution de cypress open, un dossier cypress et un fichier cypress.json seront générés dans ton projet. Tu peux configurer des paramètres tels que l’URL de base (baseUrl) pour que Cypress sache où se connecter :
+
+json
+
+{
+  "baseUrl": "http://localhost:3000",
+  "viewportWidth": 1280,
+  "viewportHeight": 720
+}
+
+Remarque : Remplace "http://localhost:3000" par l’URL de l’application tierce, qu’elle soit en local ou en ligne.
+
+3. Scripts d'intégration avec le projet tiers
+
+Ajoute des scripts dans ton fichier package.json pour démarrer à la fois l’application tierce et Cypress. Par exemple :
+
+json
+
+"scripts": {
+  "start": "react-scripts start", // Démarre l’application tierce
+  "cypress:open": "cypress open",
+  "cypress:run": "cypress run"
+}
+
+Si tu utilises une application en local, assure-toi qu'elle est démarrée avant de lancer Cypress pour que ce dernier puisse y accéder.
+4. Création de tests Cypress
+
+Dans le dossier cypress/integration, crée un fichier pour tes tests, comme test_spec.js. Voici un exemple de test qui se connecte à l’URL définie et vérifie si l’application répond correctement :
+
+javascript
+describe('Test de connexion au projet tiers', () => {
+  it('devrait charger la page d\'accueil', () => {
+    cy.visit('/'); // Utilise le baseUrl configuré dans cypress.json
+    cy.contains('Bienvenue'); // Vérifie que la page affiche un texte spécifique
+  });
+});
+
+5. Tester les interactions
+
+Selon le type de projet, tu pourras simuler des actions comme le clic, la saisie de texte, ou la navigation. Par exemple :
+
+javascript
+it('devrait permettre de se connecter', () => {
+  cy.get('#username').type('monUtilisateur');
+  cy.get('#password').type('monMotDePasse');
+  cy.get('#loginButton').click();
+  cy.url().should('include', '/dashboard');
+});
+
+6. Utiliser des commandes API (optionnel)
+
+Si ton projet tiers utilise une API, Cypress permet aussi d’envoyer des requêtes HTTP :
+
+javascript
+cy.request('POST', 'http://localhost:3000/api/login', {
+  username: 'monUtilisateur',
+  password: 'monMotDePasse'
+}).then((response) => {
+  expect(response.status).to.eq(200);
+});
+
+7. Exécution des tests
+
+Lance tes tests avec :
+
+bash
+npm run cypress:open
+
+ou pour une exécution en mode headless :
+
+bash
+npm run cypress:run
+
+En suivant ces étapes, tu pourras configurer Cypress pour interagir avec un projet tiers et y exécuter des tests fonctionnels.
