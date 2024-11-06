@@ -1,32 +1,33 @@
 /// <reference types="cypress" />
 describe('Login de mon application web.', () => {
   it('Je renseigne mes informations et je me connect', () => {
-     cy.visit('http://127.0.0.1:3000/APK/index_login.html')
+     cy.visit('http://localhost:3000')
   })
 })
 
-/* Lire le projet et compter les commentaires.
+// Test sur champ email 1
+describe('Vérification du champ email dans le formulaire de contact', () => {
+  beforeEach(() => {
+      /* Charger la page contenant le formulaire
+      cy.visit('URL_DE_TA_PAGE'); // Remplace 'URL_DE_TA_PAGE' par l'URL réelle de la page
+  }); */
 
-describe('Lis le projet et compte les commentaires dans le projet', () => {
-  it('Devrait compter tous les commentaires dans les fichiers .js', () => {
-    cy.task('countComments').then((commentCount) => {
-      cy.log(`Nombre total de commentaires: ${commentCount}`);
-      expect(commentCount).to.be.a,('number'); // Assure que le résultat est un nombre
-    });
+  it('Vérifie qu’une adresse email est entrée dans le champ de texte', () => {
+      // Cible le champ email dans le formulaire
+      cy.get('#contactForm input[type="email"]').as('emailInput');
+
+      // Entrez une adresse email de test
+      cy.get('@emailInput').type('test@example.com');
+
+      // Vérifie que le champ contient bien une adresse email
+      cy.get('@emailInput').should('have.value', 'test@example.com');
+
+      // Vérifie que le format de l'email est valide
+      cy.get('@emailInput').invoke('val').then((email) => {
+          // Expression régulière pour vérifier le format de l'email
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          expect(email).to.match(emailPattern, 'Le champ doit contenir une adresse email valide');
+      });
   });
 })
-
-/* Lis, répertorie et affiche les commentaires et leur nombre.
-describe('Répertorie et compte les commentaires commençant par "//".', () => {
-  it('Devrait afficher uniquement les commentaires en ligne et leur nombre', () => {
-    cy.task('countComments').then(({ count, comments }) => {
-      const commentList = comments.join('\n'); // Liste de tous les commentaires
-      const message = `Nombre total de commentaires: ${count}\n\nCommentaires:\n${commentList}`;
-      
-      // Affiche le message dans une boîte de dialogue
-      cy.window().then((win) => {
-        win.alert(message);
-      });
-    });
-  });
-}) */
+})
