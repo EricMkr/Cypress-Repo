@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion et Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2 id="form-title">Connexion</h2>
+  
+      <!-- Formulaire de Connexion -->
+      <form id="login-form" class="form" action="login.php" method="post">
+        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit" onclick="reloadWithDelay(event)">Se connecter</button>
+        <p>Pas encore de compte ? <a id="signup-link" href="index_signin.html" onclick="navigateToSignup(event)">S'inscrire</a></p>
+      </form>
+      
+      <!-- Overlay d'animation de chargement -->
+      <div class="overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
