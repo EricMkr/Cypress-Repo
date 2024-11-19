@@ -25,3 +25,23 @@
  -- This will overwrite an existing command --
  Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 */
+
+
+// Ceci est un fichier qui contiendra un ensemble de tests génériques pour éviter de les reécrire à chaque fois.
+
+// Exemple de test de connection.
+Cypress.Commands.add('login', (username, password) => {
+   cy.visit('/login');
+   cy.get('#username').type(username);
+   cy.get('#password').type(password);
+   cy.get('button[type="submit"]').click();
+ });
+ 
+ // Exemple de test pour vérifier le titre de la page.
+ describe('Home Page', () => {
+   it('should display the correct title', () => {
+     cy.visit('/');
+     cy.title().should('include', 'Mon Application');
+   });
+ });
+ 
