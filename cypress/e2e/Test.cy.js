@@ -3,7 +3,7 @@
 describe('Landing Page Tests', () => {
     beforeEach(() => {
         // Aller sur la page de test avant chaque cas de test
-        cy.visit('http://127.0.0.1:3000/dist/index.html') // Assurez-vous d'utiliser le bon port ou l'URL de votre page de test
+        cy.visit('http://127.0.0.1:3000/cypress-bbrep/Bootstrap/startbootstrap-landing-page/dist/index.html') // Assurez-vous d'utiliser le bon port ou l'URL de votre page de test
     })
 
     it('Vérifie la présence de la navigation et du bouton de Sign Up', () => {
@@ -97,3 +97,4 @@ describe('Landing Page Tests', () => {
 
         })
     })
+

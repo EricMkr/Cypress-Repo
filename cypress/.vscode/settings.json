@@ -1,5 +1,6 @@
 {
    "CodeGPT.apiKey": "CodeGPT Plus Beta",
    "atlascode.bitbucket.pipelines.hideFiltered": true,
-   "atlascode.bitbucket.explorer.refreshInterval": 3
+   "atlascode.bitbucket.explorer.refreshInterval": 3,
+   "vscode-corda.isCordaProject": false
 }

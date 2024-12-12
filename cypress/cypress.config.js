@@ -42,6 +42,6 @@ module.exports = defineConfig({
         }
       });
     },
-    baseUrl: 'http://127.0.0.1:3000/APK/index_login.html#', // Remplace par ton URL de base
+    baseUrl: 'http://127.0.0.1:3000/Bootstrap/startbootstrap-landing-page/dist/index.html', // Remplace par ton URL de base
   },
 });
